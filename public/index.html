@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live News Hub</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="navbar-left">
+        <a href="/" class="logo">
+          <i class="fas fa-newspaper"></i> LiveNewsHub
+        </a>
+      </div>
+
+      <div class="navbar-center">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search articles..."
+          autocomplete="off"
+          style="color: black; background-color: white;"
+        />
+      </div>
+
+      <div class="navbar-right">
+        <button onclick="toggleDarkMode()">🌙</button>
+        <button id="saved-articles-btn" onclick="toggleSavedArticles()">
+          💾 Saved
+        </button>
+        <button onclick="location.href='/'">🏠 Home</button>
+      </div>
+    </nav>
+
+    <div class="category-nav">
+      <button onclick="filterByCategory('business')">
+        <i class="fas fa-briefcase"></i> Business
+      </button>
+      <button onclick="filterByCategory('entertainment')">
+        <i class="fas fa-film"></i> Entertainment
+      </button>
+      <button onclick="filterByCategory('general')">
+        <i class="fas fa-globe"></i> General
+      </button>
+      <button onclick="filterByCategory('health')">
+        <i class="fas fa-heartbeat"></i> Health
+      </button>
+      <button onclick="filterByCategory('science')">
+        <i class="fas fa-flask"></i> Science
+      </button>
+      <button onclick="filterByCategory('sports')">
+        <i class="fas fa-football-ball"></i> Sports
+      </button>
+      <button onclick="filterByCategory('technology')">
+        <i class="fas fa-microchip"></i> Technology
+      </button>
+    </div>
+
+    <div id="news-container"></div>
+
+    <h2>Saved Articles</h2>
+    <div id="saved-articles-container"></div>
+
+    <div class="article-card">
+      <div class="share-buttons">
+        <button
+          onclick="shareOnFacebook('https://example.com/article', 'Article Title')"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </button>
+        <button
+          onclick="shareOnTwitter('https://example.com/article', 'Article Title')"
+        >
+          <i class="fab fa-twitter"></i>
+        </button>
+        <button
+          onclick="shareOnWhatsapp('https://example.com/article', 'Article Title')"
+        >
+          <i class="fab fa-whatsapp"></i>
+        </button>
+        <button
+          onclick="shareOnLinkedIn('https://example.com/article', 'Article Title')"
+        >
+          <i class="fab fa-linkedin-in"></i>
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
